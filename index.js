@@ -1,21 +1,26 @@
-var x = document.querySelectorAll(".drum");
-for (var i = 0; i < x.length; i++) {
-  x[i].addEventListener("click", function () {
-    var x = this.innerText;
-    var aud = new Audio(getSound(x));
-    aud.play();
+var xx = document.querySelectorAll(".drum");
+for (var i = 0; i < xx.length; i++) {
+  xx[i].addEventListener("click", function () {
+    var yy = this.innerText;
+    getSound(yy);
   });
 }
 function getSound(i) {
-  if (i === "w") return "sounds/tom-1.mp3";
-  else if (i == "a") return "sounds/tom-2.mp3";
-  else if (i == "s") return "sounds/tom-3.mp3";
-  else if (i == "d") return "sounds/tom-4.mp3";
-  else if (i == "j") return "sounds/snare.mp3";
-  else if (i == "k") return "sounds/crash.mp3";
-  else if (i == "l") return "sounds/kick-bass.mp3";
+  if (i === "w") return w.play();
+  else if (i == "a") return a.play();
+  else if (i == "s") return s.play();
+  else if (i == "d") return d.play();
+  else if (i == "j") return j.play();
+  else if (i == "k") return k.play();
+  else if (i == "l") return l.play();
 }
 document.addEventListener("keydown", (even) => {
-  var aud = new Audio(getSound(even.key));
-  aud.play();
+  getSound(even.key);
 });
+var w = new Audio("sounds/tom-1.mp3");
+var a = new Audio("sounds/tom-2.mp3");
+var s = new Audio("sounds/tom-3.mp3");
+var d = new Audio("sounds/tom-4.mp3");
+var j = new Audio("sounds/snare.mp3");
+var k = new Audio("sounds/crash.mp3");
+var l = new Audio("sounds/kick-bass.mp3");
